@@ -1,0 +1,26 @@
+{
+  "name": "react_es6_sassmaps",
+  "version": "1.0.0",
+  "description": "Testing React w/ ES6 and Sass Sourcemaps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Swelly/react_sassmaps.git"
+  },
+  "keywords": [
+    "sass",
+    "react",
+    "es6",
+    "source-map",
+    "test"
+  ],
+  "author": "Wesley Magness",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Swelly/react_sassmaps/issues"
+  },
+  "homepage": "https://github.com/Swelly/react_sassmaps#readme"
+}
