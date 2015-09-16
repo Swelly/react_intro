@@ -1,0 +1,17 @@
+// Border-Radius
+@mixin borderRadius($radius: $default-border-radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// Text Format
+@mixin textFormat($family, $size, $color) {
+    font: {
+        size: $size;
+        family: $family;
+        color: $color;
+    };
+}
+

@@ -11,7 +11,7 @@ export default class HelloBox extends React.Component {
 
 	render() {
 		return <div>
-			<HelloText name="Wesley V Magness" />
+			<HelloText name="Wesley" />
 		</div>
 	}
 }
