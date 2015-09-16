@@ -1,17 +1,17 @@
-
 // Import React and HelloText class
 import React from 'react';
 import HelloText from './HelloText';
 
-// Create class called HelloBox that extends the base React Component class
+// Create a class called HelloBox that
+// extends the base React Component class
 export default class HelloBox extends React.Component {
-    constructor() {
-        super();
-    }
+	constructor() {
+		super();
+	}
 
-    render() {
-        return <div>
-            <HelloText name="Wesley V Magness" />
-        </div>
-    }
+	render() {
+		return <div>
+			<HelloText name="Wesley V Magness" />
+		</div>
+	}
 }

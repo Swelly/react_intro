@@ -12,16 +12,18 @@ module.exports = {
         // Used on code before transformed
         preLoaders: [
             {
+                // "test" is commonly used to match the file extension
                 test: /\.jsx?$/,
+                // "exclude" should to used to exclude exceptions
                 exclude: /(node_modules|bower_components)/,
                 loader: 'source-map'
             }
         ],
         // Loaders http://webpack.github.io/docs/loaders.html
         loaders: [
-            // Find SCSS within src/
-            // SCSS -> SASS -> Autoprefixer -> CSS
+            // Styles
             {
+                // Find SCSS within src/
                 test: /\.scss$/,
                 include: /src/,
                 loaders: [
@@ -31,21 +33,23 @@ module.exports = {
                     'sass?outputStyle=expanded'
                 ]
             },
-            // Find all images & optimize
-            // Base 64 encoded | > URL
+            // Images
             {
+                // Find all images & optimize
                 test: /\.(jpe?g|png|gif|svg)$/i,
+                // Base 64 encoded | > URL
                 loaders: [
                     'url?limit=8192',
                     'img'
                 ]
             },
-            // Find all JS
-            // Ignore vendor
-            // Transpile with Babel
+            // Javascript
             {
+                // Find all JS
                 test: /\.jsx?$/,
+                // Ignore vendor
                 exclude: /(node_modules|bower_components)/,
+                // Transpile with Babel
                 loaders: [
                     'react-hot',
                     'babel?stage=0'
