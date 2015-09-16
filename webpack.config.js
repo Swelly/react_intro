@@ -7,7 +7,7 @@ module.exports = {
         filename: 'build/bundle.js'
     },
     // http://webpack.github.io/docs/configuration.html#devtool
-    devtool: 'eval',
+    devtool: 'eval-source-map',
     module: {
         // Used on code before transformed
         preLoaders: [
