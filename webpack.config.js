@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
     // Entry point + files to be loaded
     entry: getEntrySources(['./src/js/entry.js']),
@@ -21,9 +23,9 @@ module.exports = {
         ],
         // Loaders http://webpack.github.io/docs/loaders.html
         loaders: [
-            // Styles
             {
                 // Find SCSS within src/
+                // Sass -> CSS
                 test: /\.scss$/,
                 include: /src/,
                 loaders: [
@@ -33,23 +35,21 @@ module.exports = {
                     'sass?outputStyle=expanded'
                 ]
             },
-            // Images
             {
                 // Find all images & optimize
-                test: /\.(jpe?g|png|gif|svg)$/i,
                 // Base 64 encoded | > URL
+                test: /\.(jpe?g|png|gif|svg)$/i,
                 loaders: [
                     'url?limit=8192',
                     'img'
                 ]
             },
-            // Javascript
             {
                 // Find all JS
-                test: /\.jsx?$/,
                 // Ignore vendor
-                exclude: /(node_modules|bower_components)/,
                 // Transpile with Babel
+                test: /\.jsx?$/,
+                exclude: /(node_modules|bower_components)/,
                 loaders: [
                     'react-hot',
                     'babel?stage=0'
