@@ -1,0 +1,33 @@
+.thumbnail-container {
+  width: 50%;
+  max-width: 400px;
+  position: relative;
+  float: left;
+  padding: 0 15px;
+  box-sizing: border-box;
+
+   .thumbnail {
+    display: block;
+    padding: 15px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: border .2s ease-in-out;
+    &:hover {
+      border: 1px solid #61DAFB;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .caption {
+      padding: 3px 0;
+      border-top: 1px solid #FAFAFA;
+      color: #5A5A5A;
+    }
+   }
+}
