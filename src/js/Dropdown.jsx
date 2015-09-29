@@ -6,6 +6,10 @@ export default class Dropdown extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      open: false
+    };
+
     this.handleClick = this.handleClick.bind(this);
     this.list = this.props.items.map(function(items){
       return <ListItem item={items} />;
@@ -13,6 +17,8 @@ export default class Dropdown extends React.Component {
   }
 
   render () {
+    const open = this.state.open;
+
     return (
       <div className="dropdown clearfix">
         <Button
@@ -21,7 +27,7 @@ export default class Dropdown extends React.Component {
           className="btn-dropdown"
           subtitleClassName="caret"
         />
-        <ul className="dropdown-menu show">
+        <ul className={"dropdown-menu " + (this.state.open ? "show" : "") }>
           {this.list}
         </ul>
       </div>
@@ -29,6 +35,7 @@ export default class Dropdown extends React.Component {
   }
 
   handleClick() {
-    alert("Dropdowns");
+    // Set the state to the opposite of current val & re-render
+    this.setState({open: !this.state.open})
   }
 }

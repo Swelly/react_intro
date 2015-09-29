@@ -15,20 +15,19 @@
   .dropdown-menu {
     display: none;
     position: absolute;
-    left: 20px;
+    left: 10px;
     min-width: 160px;
     float: left;
     margin: 10px 0 0;
-    padding: 5px 0;
+    padding: 15px 25px;
     list-style: none;
-    font-size: 20px;
+    font-size: 16px;
     text-align: left;
     background-color: #fff;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    border: 1px solid #ccc;
-    border: 1px solid rgba(0,0,0,.15);
-    @include border-radius(4px);
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    border: 1px solid rgb(239, 239, 239);
+    @include borderRadius(4px);
+    box-shadow: 0 6px 12px rgba(198, 216, 217, 0.175);
   }
 }
