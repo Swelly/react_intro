@@ -46,6 +46,7 @@ code, .code {
 a, .link {
   color: $link-color;
   text-decoration: none;
+  cursor: pointer;
 
   &:visited {color: $link-color-light; }
 

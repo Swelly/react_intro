@@ -66,18 +66,4 @@ body {
     line-height: $base-line-height;
 }
 
-$background-color: #FAFAFA;
-@mixin block($background-color: #FFFEFC) {
-    width: 150px;
-    height: 150px;
-    display: inline-block;
-    padding: 0 50px;
-    box-style: border-box;
-    border: 1px solid $border-color;
-    background-color: $background-color;
-}
-.b1 { @include block(#FFFEFC); }
-.b2 { @include block(#E2DCDF); }
-.b3 { @include block($accent-color); }
-.b4 { @include block(#515B5E); }
-.b5 { @include block(#2E3233); box-shadow: $box-shadow; }
+.show {display: block !important;}
