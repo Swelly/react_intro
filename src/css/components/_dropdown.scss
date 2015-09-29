@@ -5,7 +5,7 @@
   .caret {
     position: absolute;
     display: inline-block;
-    right: 30px;
+    right: 10%;
     width: 12px;
     height: 20px;
     background: url("../img/caret.png");
@@ -32,6 +32,10 @@
     box-shadow: 0 6px 12px rgba(198, 216, 217, 0.175);
     li {
         padding: 5px 0;
+    }
+    li.active > a {
+        color: $secondary-color;
+        cursor: default;
     }
   }
 }

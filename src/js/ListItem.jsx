@@ -8,6 +8,8 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    return <li><a onClick={this.handleClick}>{this.props.item}</a></li>;
+    return  <li className={this.props.className}>
+              <a onClick={this.handleClick}>{this.props.item}</a>
+            </li>;
   }
 })

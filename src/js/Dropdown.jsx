@@ -34,7 +34,12 @@ export default class Dropdown extends React.Component {
 
     // Bind List items to whenItemClicked
     var list = this.props.items.map(function(item){
-      return <ListItem item={item} whenItemClicked={this.handleItemClick} />;
+      return <ListItem
+              item={item}
+              whenItemClicked={this.handleItemClick}
+              // When current itemTitle === this item | set 'active'
+              className={this.state.itemTitle === item ? 'active' : "" }
+              />;
     }.bind(this));
 
 
