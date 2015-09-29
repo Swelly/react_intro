@@ -7,19 +7,36 @@ export default class Dropdown extends React.Component {
     super(props);
 
     this.state = {
-      open: false
+      open: false,
+      itemTitle: this.props.title
     };
 
     this.handleClick = this.handleClick.bind(this);
-
-    // Bind List items to whenItemClicked
-    this.list = this.props.items.map(function(items){
-      return <ListItem item={items} whenItemClicked={this.handleItemClick}/>;
-    }.bind(this));
+    this.handleItemClick = this.handleItemClick.bind(this);
   }
 
+  handleClick() {
+    // Set the state to the opposite of current val & re-render
+    this.setState({open: !this.state.open})
+  }
+
+  // Recieved from ListItem event
+  handleItemClick(item) {
+    this.setState({
+      open: false,
+      itemTitle: item
+    });
+  }
+
+  // Render component to the DOM
   render () {
     const open = this.state.open;
+
+    // Bind List items to whenItemClicked
+    var list = this.props.items.map(function(item){
+      return <ListItem item={item} whenItemClicked={this.handleItemClick} />;
+    }.bind(this));
+
 
     return (
       <div className="dropdown clearfix">
@@ -30,19 +47,10 @@ export default class Dropdown extends React.Component {
           subtitleClassName="caret"
         />
         <ul className={"dropdown-menu " + (this.state.open ? "show" : "") }>
-          {this.list}
+          {list}
         </ul>
       </div>
     )
   }
-
-  handleClick() {
-    // Set the state to the opposite of current val & re-render
-    this.setState({open: !this.state.open})
-  }
-
-  // Recieved from ListItem event
-  handleItemClick(item) {
-    this.setState({open: false});
-  }
+  // End Render
 }
