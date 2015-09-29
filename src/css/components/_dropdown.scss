@@ -29,5 +29,8 @@
     border: 1px solid rgb(239, 239, 239);
     @include borderRadius(4px);
     box-shadow: 0 6px 12px rgba(198, 216, 217, 0.175);
+    li {
+        padding: 5px 0;
+    }
   }
 }

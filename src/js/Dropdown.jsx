@@ -11,9 +11,11 @@ export default class Dropdown extends React.Component {
     };
 
     this.handleClick = this.handleClick.bind(this);
+
+    // Bind List items to whenItemClicked
     this.list = this.props.items.map(function(items){
-      return <ListItem item={items} />;
-    });
+      return <ListItem item={items} whenItemClicked={this.handleItemClick}/>;
+    }.bind(this));
   }
 
   render () {
@@ -23,7 +25,7 @@ export default class Dropdown extends React.Component {
       <div className="dropdown clearfix">
         <Button
           whenClicked={this.handleClick}
-          title={this.props.title}
+          title={this.state.itemTitle || this.props.title}
           className="btn-dropdown"
           subtitleClassName="caret"
         />
@@ -37,5 +39,10 @@ export default class Dropdown extends React.Component {
   handleClick() {
     // Set the state to the opposite of current val & re-render
     this.setState({open: !this.state.open})
+  }
+
+  // Recieved from ListItem event
+  handleItemClick(item) {
+    this.setState({open: false});
   }
 }
